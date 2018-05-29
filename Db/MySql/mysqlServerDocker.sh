@@ -1,0 +1,7 @@
+#!/bin/bash
+export MYSQL_DB_NAME=marcdb 
+export MYSQL_ENV_MYSQL_ROOT_PASSWORD=anthony-1
+export MYSQL_PORT_3306_TCP_ADDR=127.0.0.1
+export MYSQL_PORT_3306_TCP_PORT=3306
+
+docker run --name ${MYSQL_DB_NAME} -p 3306:3306 -e MYSQL_ROOT_PASSWORD=${MYSQL_ENV_MYSQL_ROOT_PASSWORD} -d mysql:latest
