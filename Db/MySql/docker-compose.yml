@@ -1,0 +1,18 @@
+version: '3'
+
+services: 
+    mysql-on-docker:
+        image: mysql
+        environment:
+            MYSQL_DATABASE: example
+            MYSQL_ROOT_PASSWORD: example
+        ports:
+            - "3306:3306"
+
+    my-client:
+        image: mysql
+        environment:
+            MYSQL_ROOT_PASSWORD: example
+        depends_on: 
+            - mysql-on-docker
+        command: mysql -uroot -p example mysql-on-docker example
