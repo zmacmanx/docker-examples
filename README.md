@@ -4,7 +4,7 @@ A list of docker examples for DevOps
    * What is a docker container
    * Differences between containers and VM's
    * Setup docker
-      - Get Docker [Docker](http://docker.com)
+      - Get Docker [Docker](http://www.docker.com)
    * Hello world
 1. What Is A Image
 1. What Is A Container
