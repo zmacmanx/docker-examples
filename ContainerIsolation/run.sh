@@ -102,6 +102,38 @@ then
 		echo "<<< Press return to continue >>> "
 		read ANS
 		echo
+
+		echo "--------------------------"
+		echo
+		echo ">> docker inspect ${CONTAINER_ID} | grep MergedDir"
+		echo
+		docker inspect ${CONTAINER_ID} | grep '"MergedDir":'
+		echo
+		echo "<<< Press return to continue >>> "
+		read ANS
+		echo
+
+		echo "--------------------------"
+		echo "Using Container ID: ${CONTAINER_ID}"
+		echo
+		echo ">> docker container stop ${CONTAINER_ID}"
+		echo
+		docker container stop ${CONTAINER_ID}
+		echo
+		echo "<<< Press return to continue >>> "
+		read ANS
+		echo
+
+		echo "--------------------------"
+		echo "Using Container ID: ${CONTAINER_ID}"
+		echo
+		echo ">> docker container kill ${CONTAINER_ID}"
+		echo
+		docker container kill ${CONTAINER_ID} 2>/dev/null
+		echo
+		echo "<<< Press return to continue >>> "
+		read ANS
+		echo
 	else
 		echo "Docker is not running on this system"
 	fi
