@@ -11,12 +11,14 @@ then
 		echo "--------------------------"
 		echo ">> docker image pull alpine"
 		docker image pull alpine
+		echo
 		echo "<<< Press return to continue >>> "
 		read ANS
 	
 		echo "--------------------------"
 		echo ">> docker image ls"
 		docker image ls
+		echo
 		echo "<<< Press return to continue >>> "
 		read ANS
 	else
