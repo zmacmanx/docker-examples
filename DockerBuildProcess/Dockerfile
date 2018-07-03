@@ -1,6 +1,6 @@
 FROM alpine
 
-RUN apk update && apk add node.js
+RUN apk update && apk add nodejs
 
 COPY . /app
 

@@ -8,6 +8,9 @@ then
 	docker info > /dev/null 2>&1
 	if [ ${?} -eq 0 ]
 	then
+		echo "y" | docker system prune > /dev/null 2>&1
+		docker rmi -f `docker images -aq` >/dev/null 2>&1
+
 		echo "--------------------------"
 		echo ">> Create a index.js file with the following:"
 		echo 'var os = require("os");'
@@ -21,7 +24,7 @@ then
 		echo "--------------------------"
 		echo ">> Create a Dockerfile with the following:"
 		echo 'FROM alpine'
-		echo 'RUN apk update && apk add node.js'
+		echo 'RUN apk update && apk add nodejs'
 		echo 'COPY . /app'
 		echo 'WORKDIR /app'
 		echo 'CMD ["node", "index.js"]'
