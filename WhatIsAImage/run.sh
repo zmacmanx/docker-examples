@@ -8,18 +8,16 @@ then
 	docker info > /dev/null 2>&1
 	if [ ${?} -eq 0 ]
 	then
-		echo ">>>>>>>>>>>>>>>>>>>>>>>>>>"
-		echo "docker image pull alpine"
+		echo "--------------------------"
+		echo ">> docker image pull alpine"
 		docker image pull alpine
-		echo ">>>>>>>>>>>>>>>>>>>>>>>>>>"
-		echo 
+		echo "<<< Press return to continue >>> "
 		read ANS
 	
-		echo ">>>>>>>>>>>>>>>>>>>>>>>>>>"
-		echo "docker image ls"
+		echo "--------------------------"
+		echo ">> docker image ls"
 		docker image ls
-		echo ">>>>>>>>>>>>>>>>>>>>>>>>>>"
-		echo 
+		echo "<<< Press return to continue >>> "
 		read ANS
 	else
 		echo "Docker is not running on this system"
