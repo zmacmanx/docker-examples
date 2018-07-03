@@ -9,35 +9,35 @@ then
 	if [ ${?} -eq 0 ]
 	then
 		echo "--------------------------"
-		echo "docker container run alpine ls -l"
+		echo ">> docker container run alpine ls -l"
 		docker container run alpine ls -l
 		echo 
 		echo "<<< Press return to continue >>> "
 		read ANS
 	
 		echo "--------------------------"
-		echo "docker container run alpine echo 'hello world'"
+		echo ">> docker container run alpine echo 'hello world'"
 		docker container run alpine echo 'hello world'
 		echo 
 		echo "<<< Press return to continue >>> "
 		read ANS
 	
 		echo "--------------------------"
-		echo "docker container run alpine /bin/sh"
+		echo ">> docker container run alpine /bin/sh"
 		docker container run alpine /bin/sh
 		echo 
 		echo "<<< Press return to continue >>> "
 		read ANS
 
 		echo "--------------------------"
-		echo "docker container ls"
+		echo ">> docker container ls"
 		docker container ls 
 		echo 
 		echo "<<< Press return to continue >>> "
 		read ANS
 
 		echo "--------------------------"
-		echo "docker container ls -a"
+		echo ">> docker container ls -a"
 		docker container ls -a
 		echo 
 		echo "<<< Press return to continue >>> "
