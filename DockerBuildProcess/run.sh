@@ -16,6 +16,7 @@ then
 		echo 
 		echo "<<< Press return to continue >>> "
 		read ANS
+		echo
 	
 		echo "--------------------------"
 		echo ">> Create a Dockerfile with the following:"
@@ -27,6 +28,7 @@ then
 		echo 
 		echo "<<< Press return to continue >>> "
 		read ANS
+		echo
 	
 		echo "--------------------------"
 		echo ">> docker image build -t hello.v0.1 ."
