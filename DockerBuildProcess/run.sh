@@ -36,6 +36,14 @@ then
 		echo 
 		echo "<<< Press return to continue >>> "
 		read ANS
+		echo
+
+		echo "--------------------------"
+		echo ">> docker container run hello.v0.1"
+		docker container run hello.v0.1
+		echo 
+		echo "<<< Press return to continue >>> "
+		read ANS
 	else
 		echo "Docker is not running on this system"
 	fi
