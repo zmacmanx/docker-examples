@@ -1,0 +1,17 @@
+
+var buffer = "";
+
+const { exec } = require('child_process');
+exec('az provider show --name Microsoft.ContainerService', (error, stdout, stderr) => {
+  if (error) {
+    console.error(`exec error: ${error}`);
+    return;
+  }
+  
+  buffer = stdout;
+  console.log(`stdout: ${buffer}`);
+  console.log(`stderr: ${stderr}`);
+}).then(function(buffer) {
+	x = buffer.length;
+	console.log(`stdout: ${x}`);
+});
