@@ -12,6 +12,7 @@ then
 		echo "Clean up environment and prune the system information"
 		echo
 		echo "Cleaning...."
+
 		sleep 1
 		echo "y" | docker system prune > /dev/null 2>&1
 		docker rmi -f `docker images -aq` >/dev/null 2>&1
@@ -81,6 +82,7 @@ then
 
 		clear
 		echo "--------------------------"
+
 		echo "Once the commit has completed and new image is create for the local repository.  To see the effect, "
 		echo "run a listing of the images and look for none as the result of the commit. "
 		echo ""
