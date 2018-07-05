@@ -1,5 +1,4 @@
 Build Docker Images
-
 1. Commands
   2. docker container run -i ubuntu bash
     * apt-get update 
