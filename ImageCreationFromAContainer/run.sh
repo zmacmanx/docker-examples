@@ -12,7 +12,8 @@ then
 		echo "Clean up environment and prune the system information"
 		echo
 		echo "Cleaning...."
-		sleep 2
+
+		sleep 1
 		echo "y" | docker system prune > /dev/null 2>&1
 		docker rmi -f `docker images -aq` >/dev/null 2>&1
 		echo "<<< Press return to continue >>> "
@@ -53,7 +54,10 @@ then
 		read ANS
 		echo
 
+		clear
 		echo "--------------------------"
+		echo "One of the advantages to docker containers is the ability to get a complete accounting of the image. "
+		echo "The container allows for a diff process that shows every file that has been added, deleted or changed. "
 		echo
 		echo ">> docker container diff ${CONTAINER_ID}"
 		echo
@@ -63,7 +67,10 @@ then
 		read ANS
 		echo
 
+		clear
 		echo "--------------------------"
+		echo "Now that the image has all the components we desire, we want to save them as a single image for execution. "
+		echo "The commit process will address this requirement and produce all the associate keys and checksums"
 		echo
 		echo ">> docker container commit ${CONTAINER_ID}"
 		echo
@@ -73,8 +80,12 @@ then
 		read ANS
 		echo
 
+		clear
 		echo "--------------------------"
-		echo "Reviewing the commit "
+
+		echo "Once the commit has completed and new image is create for the local repository.  To see the effect, "
+		echo "run a listing of the images and look for none as the result of the commit. "
+		echo ""
 		echo ">> docker image ls"
 		echo ""
 		docker image ls
@@ -84,10 +95,12 @@ then
 		echo "<<< Press return to continue >>> "
 		read ANS
 
+		clear
 		echo "--------------------------"
 		echo "Now that the image is commited and available for use, we need to make it easier to identify and use. "
 		echo "Utilizing the tag command you can name and versionize the new image.  Lets name it ourfiglet for this "
 		echo "excerise. "
+		echo ""
 		echo ">> docker image tag ${IMAGE_ID} ourfiglet"
 		echo ""
 		docker image tag ${IMAGE_ID} ourfiglet
@@ -99,6 +112,7 @@ then
 		echo "--------------------------"
 		echo "Lets check the image again.  We now see the name ourfiglet has been added to the image.  This"
 		echo "make it easier to identify and use as single executable."
+		echo ""
 		echo ">> docker image ls"
 		echo ""
 		docker image ls
@@ -110,6 +124,7 @@ then
 		echo "--------------------------"
 		echo "Now the new image is ubuntu and figlet together and can be used as a single executable. "
 		echo "This allows us to simple run the image with our image name."
+		echo ""
 		echo ">> docker container run ourfiglet figlet 'hello'"
 		echo ""
 		docker container run ourfiglet figlet 'hello'

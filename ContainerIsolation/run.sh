@@ -12,12 +12,12 @@ then
 		docker rmi -f `docker images -aq` >/dev/null 2>&1
 
 		echo "--------------------------"
-		echo ">> docker container run -it alpine /bin/sh"
+		echo ">> docker container run -it alpine sh"
 		echo ">> echo 'hello world' > hello.txt"
 		echo ">> ls"
 		echo ">> exit"
 		echo
-		echo "echo 'hello world' > hello.txt; ls" | docker container run -i alpine /bin/sh
+		echo "echo 'hello world' > hello.txt; ls" | docker container run -i alpine sh
 		echo
 		echo "<<< Press return to continue >>> "
 		read ANS
@@ -45,7 +45,7 @@ then
 		echo ">> docker container ls -a"
 		echo
 		docker container ls -a
-		CONTAINER_ID=`docker container ls -a | grep "/bin/sh" | awk '{ print $1 }'`
+		CONTAINER_ID=`docker container ls -a | grep '\"sh\"' | awk '{ print $1 }'`
 		echo
 		echo "<<< Press return to continue >>> "
 		read ANS
