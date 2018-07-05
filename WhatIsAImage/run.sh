@@ -9,14 +9,32 @@ then
 	if [ ${?} -eq 0 ]
 	then
 		echo "--------------------------"
+		echo ">> docker system prune"
+		echo ">> docker rmi -f `docker images -aq`"
+		echo "y" | docker system prune > /dev/null 2>&1
+		docker rmi -f `docker images -aq` >/dev/null 2>&1
+		echo
+		echo "<<< Press return to continue >>> "
+		read ANS
+
+		echo "--------------------------"
+		echo ">> docker image ls"
+		docker image ls
+		echo
+		echo "<<< Press return to continue >>> "
+		read ANS
+
+		echo "--------------------------"
 		echo ">> docker image pull alpine"
 		docker image pull alpine
+		echo
 		echo "<<< Press return to continue >>> "
 		read ANS
 	
 		echo "--------------------------"
 		echo ">> docker image ls"
 		docker image ls
+		echo
 		echo "<<< Press return to continue >>> "
 		read ANS
 	else
