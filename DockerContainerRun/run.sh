@@ -11,11 +11,13 @@ then
 		clear
 		echo
 		echo "--------------------------"
-		echo "Start with a little clean-up to have as clean a slate as possible"
-		echo "And display the current state before we begin"
+		echo "Start with a little clean-up to have as clean a slate as possible."
+		echo "And display the current state before we begin."
+		echo "Note: first time image has to be pulled from the internet"
 		echo ">> docker container ls -a"
 		echo 
 		echo "y" | docker system prune > /dev/null 2>&1
+		docker rmi -f `docker images -aq` >/dev/null 2>&1
 		docker container ls -a
 		echo
 		echo "<<< Press return to continue >>> "
@@ -73,8 +75,8 @@ then
 		echo "<<< Press return to continue >>> "
 		read ANS
 	else
-		echo "Docker does not appear to be running on your system. Please, start the service."
+		echo "Docker does not appear to be running on your system. Please, start the service"
 	fi
 else
-	echo "Docker does not seem to be setup for this environment. Please, make sure docker is installed and in your path."
+	echo "Docker does not seem to be setup for this environment. Please, make sure docker is installed and in your path"
 fi
