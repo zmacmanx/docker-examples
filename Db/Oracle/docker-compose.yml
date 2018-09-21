@@ -1,10 +1,5 @@
 version: '3'
 services:
-  postgres:
-    image: 'postgres:latest'
-    ports:
-      - '5432:5432'
-
   oracle12:
     image: 'sath89/oracle-12c'
     environment:
