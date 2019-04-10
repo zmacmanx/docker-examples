@@ -1,11 +1,11 @@
-ApiVersion: v1
-kind: pod
+apiVersion: v1
+kind: Pod
 metadata:
   name: myapp-pod
   labels:
     app: myapp
 spec:
-   containers:
-     - name: mapp-containers
-       image: busybox
-       command: [ 'sh', '-c', 'echo hello kube && sleep 10' ]
+containers:
+  - name: mapp-containers
+    image: busybox
+    command: [ 'sh', '-c', 'echo hello kube && sleep 10' ]
