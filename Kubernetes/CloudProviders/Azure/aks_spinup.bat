@@ -24,7 +24,8 @@ az aks install-cli
 #
 #
 #
-ak aks get-credentials --resource-group rg-kubedemo-aks --name kc-kubedemo-aks
+# ak aks get-credentials --resource-group rg-kubedemo-aks --name kc-kubedemo-aks
+az aks get-credentials --resource-group rg-kubedemo-aks --name kc-kubedemo-aks
 
 #
 #
